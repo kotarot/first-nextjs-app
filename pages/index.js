@@ -1,16 +1,27 @@
 import Head from 'next/head'
 import Image from 'next/image'
 
-const name = "Next.js"
+import Header from '../components/Header'
+import Footer from '../components/Footer'
+import TwistyPlayer from '../components/TwistyPlayer'
 
-export default function Index() {
+const Index = () => {
+
+  const algForm = {
+    algorithm: "U R2 F B R B2 R U2 L B2 R U' D' R2 F R' L B2 U2 F2", // superflip
+  }
+
   return (
     <div>
+      <Header />
+
       <div className="hero">
-        <h1 className="title">Hello, {name} World!</h1>
-        <p className="text-center text-teal-500 text-2xl py-4">Input an algorithm.</p>
-        <a className="btn-blue" href="#">Go!</a>
+        <TwistyPlayer formId="alg-form" algForm={algForm} />
       </div>
+
+      <Footer />
     </div>
   )
 }
+
+export default Index
